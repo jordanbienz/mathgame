@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="description" content="Math Game">
+	<title>Math Game</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="./apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	<link rel="manifest" href="./manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+	<script src="./js/math.js"></script>
+</head>
+<body onload="pageLoad()">
+
+  <header class="header">
+    <h1 class="header__title">Math Game</h1>
+  </header>
+  
+  <div class="spacer">
+    &nbsp;
+  </div>
+  
+  <div class="container">
+  
+  <div style="font-size: 25px">
+    <p>Enter A Range For Random Numbers:</p>
+    <p><input id="numrange1" type="number" style="width:50px; height:40px; font-size: 30px" onchange="genratePointValue();"/> to
+    <input id="numrange2" type="number" style="width:50px; height:40px; font-size: 30px" onchange="genratePointValue();"/></p>
+	<a class="game-button" onclick="startGame();" id="startgamebutton">START GAME</a>
+  </div>
+  
+  <div id="answrDiv" style="font-size: 25px";>
+    <form id="CalcForm" method="post" action="" onSubmit="return CalcAnswr();">
+    <p style="font-size: 40px"><label id="firstnum" type="number" style="width:50px;"></label>
+      <label id="mathoperator" style="width:50px;"></label>
+      <label id="secondnum" type="number" style="width:50px;"></label>
+      = ?<!--<input id="CalcSum" type="number" style="width:100px; height:50px; font-size: 30px"/>--></p>		
+    </form>
+	<a class="game-button" onclick="recognition.start();" id="answrbutton">ANSWER</a>
+  </div>
+  
+  <div id="pointValue">
+   <p> &nbsp; </p>
+  </div>
+  
+  <div id="currentscore">
+   <p> &nbsp; </p>
+  </div>
+ 
+    <p class="game-explanation">
+      <strong class="important">How to play:</strong> Enter A Range For Random Numbers. Press <strong><em> Start Game</em></strong> to begin game. Press <strong><em>Answer</em></strong> and <strong><em>Speak</em></strong> the correct answer.
+    </p>
+
+ </Div>
+ 
+ <!-- Popup Modal -->
+<div id="myModal" class="modal" onclick="closepopupmsg();">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">×</span>
+      <p>&nbsp;</p>
+    </div>
+    <div class="modal-body">
+      <p></p>
+    </div>
+  </div>
+
+</div>
+
+  <script src="./js/app.js"></script>
+  <script src="./js/speach.js"></script>
+  
+</body>
+</html>
